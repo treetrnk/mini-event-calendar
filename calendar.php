@@ -34,7 +34,7 @@
     <table width=100% cellspacing='0' class='calendar'>
       <tr bgcolor=#72aaff>
         <td>
-          <a style='text-decoration:none;color:#000000;' href='$url?" . $getvars_plus . "m=$prevm&y=$prevy>&#9668;</a>
+          <a style='text-decoration:none;color:#000000;' href='$url?" . $getvars_plus . "m=$prevm&y=$prevy'>&#9668;</a>
         </td>
         <td colspan='5' align='center'>
           <a style='text-decoration:none;color:#000000;' href='$url?$getvars'><b>$month $y</b>
