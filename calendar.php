@@ -93,7 +93,7 @@
           $result = mysql_query($sql); 
           if (mysql_num_rows($result) > 0) { 
             echo "<td class='cal-event' align='center'>";
-            echo "<a href='?date=$formatted&$getvars'"; 
+            echo "<a href='" . $event_page . "date=$formatted'"; 
             if ($formatted == $today) { echo "style='border: 1px solid #454545;border-radius: 3px;'"; }
             echo ">$dayofmonth</a>";
           } else {

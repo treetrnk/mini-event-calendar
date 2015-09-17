@@ -38,23 +38,22 @@
   // NOTE: THESE CAN BE LEFT BLANK
   
   /*
-  Enter your URL in the string below. 
-  Note that this variable is placed at the beginning of <A HREF> link destinations in calendar.php.
-  It should only contain the URL and should not contain any $_GET variables.
-  To be clear, here is an example of how it will be called:
-  echo "<a href='$url?date=$date'>Example</a>";
-  */
-  $url = "";
-
-  /*
   Enter any $_GET variables that you would like to have included in all <A HREF> links.
-
   Do NOT end the string with a '&' to accommadate additional variables already in place.
   For example, if your website is set up to navigate using PHP, you may
   want to add something like "page=$page".
   Again, like the above variable, here is an example of how it will be called:
-  echo "<a href='$url?$getvars&date=$date'>Example</a>";
+  echo "<a href='?date=$date&$getvars'>Example</a>";
   */
   $getvars = "";
+
+  /*
+  If you click on a date that has an event on it, it will bring you to the destination of the variable
+  below and append one $_GET variable to it. So if the string below is set to something like 
+  "www.example.com/event.php" make sure it ends with a ? ("www.example.com/event.php?") to accomodate 
+  the variable that will be appended to it. Additionally, if you place variables after the url 
+  ("www.example.com/index.php?page=event"), end the string with a &.
+   */
+  $event_page = "";
 
 ?>
