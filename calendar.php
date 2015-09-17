@@ -81,8 +81,10 @@
         $endofday = $caldate + $dateunits['day'] - 1;           
         $formatted = date('Y-m-d', $caldate);
         $today = date('Y-m-d', time());
-        $sql = "SELECT * FROM $table WHERE $additional_sql AND $date_col BETWEEN '$caldate' AND '$endofday'";
-        $result = mysql_query($sql); 
+        
+        if ( $check_events == "yes") {      // HIGHLIGHT DAYS WITH EVENTS - CIRCLE IF CURRENT DAY
+          $sql = "SELECT * FROM $table WHERE $additional_sql AND $date_col BETWEEN '$caldate' AND '$endofday'";
+          $result = mysql_query($sql); 
           if (mysql_num_rows($result) > 0) { 
             echo "<td class='cal-event' align='center'>";
             echo "<a href='$url?" . $getvars_plus . "date=$formatted'"; 
@@ -92,9 +94,15 @@
             echo '<td class="cal-normal" align="center">';
             if ($formatted == $today) { echo "<span style='border: 1px solid #454545;border-radius: 3px;'>"; }
             echo $dayofmonth;
-            //echo mysql_error($result);
             if ($formatted == $today) { echo "</span>"; }
           }
+        } else {
+          echo '<td class="cal-normal" align="center">';
+          if ($formatted == $today) { echo "<span style='border: 1px solid #454545;border-radius: 3px;'>"; }
+          echo $dayofmonth;
+          if ($formatted == $today) { echo "</span>"; }
+        }
+        
         echo "</td>"; 
 
         $dayofmonth++;
