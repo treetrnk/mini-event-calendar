@@ -72,7 +72,7 @@
           while ($daysbefore > 0) {
             $tempday = $prevtotal - $daysbefore + 1;
             $prevdate = date('Y-m-d', strtotime($prevy . '-' . $prevm . '-' . $tempday));
-            $sql = "SELECT * FROM $table WHERE type = 'event' AND eventdate BETWEEN '$prevdate 00:00:00' AND '$prevdate 23:59:59'";
+            //$sql = "SELECT * FROM $table WHERE $additional_sql AND $datecol BETWEEN '$prevdate 00:00:00' AND '$prevdate 23:59:59'";
             echo "<td class='cal-other' align='center'>$tempday</td>";
             $daysbefore--; 
           } 
@@ -81,7 +81,7 @@
         $endofday = $caldate + $dateunits['day'] - 1;           
         $formatted = date('Y-m-d', $caldate);
         $today = date('Y-m-d', time());
-        $sql = "SELECT * FROM $table WHERE type = 'event' AND startdate BETWEEN '$caldate' AND '$endofday'";
+        $sql = "SELECT * FROM $table WHERE $additional_sql AND $date_col BETWEEN '$caldate' AND '$endofday'";
         $result = mysql_query($sql); 
           if (mysql_num_rows($result) > 0) { 
             echo "<td class='cal-event' align='center'>";
