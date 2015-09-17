@@ -2,12 +2,6 @@
 
   include('config.php');
 
-  echo "
-    <br />
-    $_SERVER[HTTP_HOST] <br />
-    $_SERVER[REQUEST_URI] <br />
-  ";
-  
   // Accommodate additional variables already in URLs
   if ( $getvars != "" ){
     $getvars_plus = "$getvars&";
