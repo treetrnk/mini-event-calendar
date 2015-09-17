@@ -1,6 +1,6 @@
 <?php
 
-  include('cal-variables.php')
+  include('config.php');
   
   // Accommodate additional variables already in URLs
   if ( $getvars != "" ){
