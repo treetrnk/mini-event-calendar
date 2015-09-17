@@ -15,4 +15,4 @@ A simple PHP calendar capable of highlighting days containing events.
 ```php
   include('mini-event-calendar-master/calendar.php')
 ```
-* Edit config.php and change variables to desired values. Note that some can be left blank.
+* Edit `config.php` and change variables to desired values. Note that some can be left blank.
