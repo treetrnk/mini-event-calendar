@@ -2,6 +2,13 @@
 
   include('cal-variables.php')
   
+  // Accommodate additional variables already in URLs
+  if ( $getvars != "" ){
+    $getvars_plus = "$getvars&";
+  } else {
+    $getvars_plus = "";
+  }
+  
   if (isset($_GET['m']) && isset($_GET['y'])) {
     $m = $_GET['m'];
     $y = $_GET['y'];
@@ -27,13 +34,13 @@
     <table width=100% cellspacing='0' class='calendar'>
       <tr bgcolor=#72aaff>
         <td>
-          <a style='text-decoration:none;color:#000000;' href='" . $url . "m=$prevm&y=$prevy>&#9668;</a>
+          <a style='text-decoration:none;color:#000000;' href='$url?" . $getvars_plus . "m=$prevm&y=$prevy>&#9668;</a>
         </td>
         <td colspan='5' align='center'>
-          <a style='text-decoration:none;color:#000000;' href='$url'><b>$month $y</b>
+          <a style='text-decoration:none;color:#000000;' href='$url?$getvars'><b>$month $y</b>
         </td>
         <td align='right'>
-          <a style='text-decoration:none;color:#000000;' href='" . $url . "m=$nextm&y=$nexty'>&#9658;</a>
+          <a style='text-decoration:none;color:#000000;' href='$url?" . $getvars_plus . "m=$nextm&y=$nexty'>&#9658;</a>
         </td>
       </tr>
       <tr style='border-top: 1px solid #999999;' bgcolor=#aaccff>
@@ -78,7 +85,7 @@
         $result = mysql_query($sql); 
           if (mysql_num_rows($result) > 0) { 
             echo "<td class='cal-event' align='center'>";
-            echo "<a href='" . $url . "date=$formatted'"; 
+            echo "<a href='$url?" . $getvars_plus . "date=$formatted'"; 
             if ($formatted == $today) { echo "style='border: 1px solid #454545;border-radius: 3px;'"; }
             echo ">$dayofmonth</a>";
           } else {
