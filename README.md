@@ -7,11 +7,12 @@ A simple PHP calendar capable of highlighting days containing events.
 
 ###Follow these steps to implement into your website:
 
-1. In the PHP file that you want the calendar to appear on, add the following between the `<head>` `</head>` tags.
+* In the PHP file that you want the calendar to appear on, add the following between the `<head>` `</head>` tags.
 ```html
   <link rel="stylesheet" href="cal-style.css">
 ```
-2. Then add the following line where you want the calendar to appear (must be inside `<?php` `?>` tags).
+* Then add the following line where you want the calendar to appear (must be inside `<?php` `?>` tags).
 ```php
 include('calendar.php')
 ```
+* Edit cal-variables.php and change variables to desired values. Note that some can be left blank.
