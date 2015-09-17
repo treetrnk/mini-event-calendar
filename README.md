@@ -15,4 +15,4 @@ A simple PHP calendar capable of highlighting days containing events.
 ```php
 include('calendar.php')
 ```
-* Edit cal-variables.php and change variables to desired values. Note that some can be left blank.
+* Edit config.php and change variables to desired values. Note that some can be left blank.
