@@ -18,9 +18,9 @@ A simple PHP calendar capable of highlighting days containing events.
 ```
 * Edit `config.php` and change variables to desired values. Note that some can be left blank.
 
-* For a very basic example how this should be implemented into a page, see the code below.
+* For a very basic example how this should be implemented into a page, see `/example.php` below.
 
-```html
+```php
   <html>
     <head>
       <title></title>
