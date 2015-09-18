@@ -23,8 +23,8 @@ A simple PHP calendar capable of highlighting days containing events.
 ```php
   <html>
     <head>
-      <title></title>
-        <link rel="stylesheet" href="mini-event-calendar-master/cal-style.css">
+      <title>Example</title>
+      <link rel="stylesheet" href="mini-event-calendar-master/cal-style.css">
     </head>
     <body>
       <?php 
