@@ -27,7 +27,9 @@ A simple PHP calendar capable of highlighting days containing events.
         <link rel="stylesheet" href="mini-event-calendar-master/cal-style.css">
     </head>
     <body>
-      <?php include('mini-event-calendar-master/calendar.php') ?>
+      <?php 
+        include('mini-event-calendar-master/calendar.php') 
+      ?>
     </body>
   </html>
 ```
