@@ -56,4 +56,15 @@
    */
   $event_page = "";
 
+///////////////////////////////
+//    COLOR VARIABLES    //
+///////////////////////////////
+
+/**
+ * This would be much better served by dynamically setting this to different classes and having CSS handle the different colors, but to fix
+ * the requested ask by the creator, we can set the color here
+ */
+
+$calendarHeaderColor = '#72aaff';
+$calendarDayColor = '#aaccff';
 ?>
