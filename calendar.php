@@ -2,6 +2,14 @@
 
   include('config.php');
 
+  if(!isset($calendarHeaderColor)) {
+      $calendarHeaderColor = '#72aaff';
+  }
+
+if(!isset($calendarDayColor)) {
+    $calendarDayColor = '#aaccff';
+}
+
   // Accommodate additional variables already in URLs
   if ( $getvars != "" ){
     $getvars_plus = "$getvars&";
@@ -32,7 +40,7 @@
 
   echo "
     <table width=100% cellspacing='0' class='calendar'>
-      <tr bgcolor=#72aaff>
+      <tr bgcolor=" . $calendarHeaderColor .">
         <td>
           <a style='text-decoration:none;color:#000000;' href='?m=$prevm&y=$prevy&$getvars'>&#9668;</a>
         </td>
@@ -43,7 +51,7 @@
           <a style='text-decoration:none;color:#000000;' href='?m=$nextm&y=$nexty&$getvars'>&#9658;</a>
         </td>
       </tr>
-      <tr style='border-top: 1px solid #999999;' bgcolor=#aaccff>
+      <tr style='border-top: 1px solid #999999;' bgcolor=" . $calendarDayColor . ">
         <th>Su</th>
         <th>Mo</th>
         <th>Tu</th>
